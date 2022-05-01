@@ -101,7 +101,7 @@ int calculateCorrectMove(int first, int second, int third) {
 
 //Changes user lives on cons. class
 void changeLives() {
-    if(userClass == 2) {
+    if(userClass == 1) {
         lives = 2;
     } else {
         lives = 1;
@@ -194,7 +194,7 @@ void roundGame() {
                 }
                 break;
             case 4: //Drink Potion Success
-                printf("You grab a health potion from your bag. You quickly consume it and gain +1 Life");
+                printf("You grab a health potion from your bag. You quickly consume it and gain +1 Life\n");
                 lives++;
                 if (userClass == 0) {
                     bossHealth = bossHealth + 2;
@@ -238,7 +238,7 @@ void roundGame() {
                 if (lives == 0) {
                     printf("You frantically search your bag for a potion. You grab the first vial you find and hastily drink it. You suddenly feel lightheaded. Did I accidentally grab the poison...\n");
                 } else {
-                    printf("You open your bag in search of a potion. Desperately, you grab the first vial you can and swiftly consume it. Unexpectedly, you feel a great pain from stomach, had you just drunk a potion of harm?");
+                    printf("You open your bag in search of a potion. Desperately, you grab the first vial you can and swiftly consume it. Unexpectedly, you feel a great pain from stomach, had you just drunk a potion of harm?\n");
                 }
                 break;
         }
@@ -254,7 +254,7 @@ int gameplayLoop() {
         roundGame();
         if (lives > 0 && bossHealth != 0) {
             printf("\nBoss Health: %d/10\n", bossHealth);
-            printf("You have %d remaining lives\n", lives);
+            printf("You have %d remaining lives\n\n", lives);
         } else if (lives <= 0) {
             printf("\nBoss Health: %d/10\n", bossHealth);
             printf("Failed: Fate has no forgiveness for those who dare stand against it...");
